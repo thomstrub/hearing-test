@@ -7,9 +7,16 @@
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 
+// sound -----------------------------------------------*/
+
+var context = new AudioContext()
+var o = context.createOscillator()
+o.type = "sine"
+
 /*----- init function -----*/
 initialize();
 function initialize(){
+    connect();
     /*----- event listeners -----*/
     console.log("init");
     startButton.addEventListener('click', startButtonEvent);
@@ -19,8 +26,10 @@ function initialize(){
 
 /*------------------------------ render and render helper functions ----------------------------*/
 
-function render(){
-    console.log("render")
+function connect(){
+    o.connect(context.destination)
+    
+    
 }
 
 
@@ -29,10 +38,11 @@ function render(){
 
 function startButtonEvent(e){
     e.preventDefault();
-    render();
+    o.start();
 }
 
 function stopButtonEvent(e){
     e.preventDefault();
-    render();
+    o.pause();
+    connect();
 }
