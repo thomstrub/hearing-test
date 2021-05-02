@@ -12,37 +12,27 @@ initialize();
 function initialize(){
     /*----- event listeners -----*/
     console.log("init");
-    randomButtonElem.addEventListener('click', randomButtonEvent);
+    startButton.addEventListener('click', startButtonEvent);
+    stopButton.addEventListener('click', stopButtonEvent);
     
 }
 
 /*------------------------------ render and render helper functions ----------------------------*/
 
-async function render(){
-    const data = await getRandomIdea();
-    const idea = data["idea"];
-    console.log(data["idea"], "data")
-    resultElem.innerHTML = '';
-    let result = document.createElement('h3');
-    result.setAttribute('class', "idea");
-    result.textContent = idea;
-    resultElem.appendChild(result);
+function render(){
+    console.log("render")
 }
 
-// async function randomAPIcall(){
-//     const data = await getRandomIdea()
-//     console.log(data, "API Call <----");
-//     return data;
-// }
 
-function getRandomIdea(){
-    return fetch('/api/random').then(res => res.json());
-
-}
 
 /*------------------------------ controller functions ----------------------------*/
 
-function randomButtonEvent(e){
+function startButtonEvent(e){
+    e.preventDefault();
+    render();
+}
+
+function stopButtonEvent(e){
     e.preventDefault();
     render();
 }
