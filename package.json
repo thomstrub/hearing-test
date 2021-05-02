@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "audio-context": "^1.0.3"
+  }
+}
