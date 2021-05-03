@@ -26,6 +26,7 @@ button:hover{
 }
 
 #buttons{
+    margin-top: 5vw;
     display: flex;
     justify-content: center;
 }
@@ -33,4 +34,10 @@ button:hover{
 #score{
     display: flex;
     justify-content: center;
+    margin: 5vw auto;
+    color:rgb(216, 105, 64);
+    height: 5vw;
+    width: 10vw;
+    background-color: cornsilk;
+    border-radius: 30px;
 }
