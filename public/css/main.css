@@ -1,3 +1,36 @@
+
+body {
+    background-color: rgb(236, 245, 245);
+    
+}
+
 h1 {
-    color:blue;
+    color:rgb(120, 40, 136);
+}
+
+button{
+    width: 20vw;
+    height: 8vw;
+    margin: 10px 10px 10px 10px;
+    border-radius: 30px;
+   
+}
+
+button:hover{
+    background-color: coral;
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+}
+
+#score{
+    display: flex;
+    justify-content: center;
 }
