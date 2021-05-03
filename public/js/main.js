@@ -5,12 +5,14 @@
 
 const state = {
     on: false,
-    hertz: 150
+    hertz: 0,
+    score: "",
 }
 
 /*----- cached element references -----*/
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
+const score = document.getElementById('score');
 
 // sound -----------------------------------------------*/
 
@@ -25,9 +27,11 @@ var hearingTest;
 /*----- init function -----*/
 initialize();
 function initialize(){
-    connect();
+    
     /*----- event listeners -----*/
     console.log("init");
+    state.score = document.createElement('h3');
+    score.appendChild(state.score);
     startButton.addEventListener('click', startButtonEvent);
     stopButton.addEventListener('click', stopButtonEvent);
     
@@ -35,15 +39,18 @@ function initialize(){
 
 /*------------------------------ render and render helper functions ----------------------------*/
 
-function connect(){
-    o.connect(context.destination)
-    
+function changeScore(){
+    score.removeChild(state.score);
+    state.score = document.createElement('h3');
+    state.score.innerText = state.hertz;
+    score.appendChild(state.score); 
     
 }
 
 function changeFrequency(){
     state.hertz += 1;
     o.frequency.value = state.hertz
+    changeScore();
 }
 
 /*------------------------------ controller functions ----------------------------*/
@@ -58,7 +65,7 @@ function startButtonEvent(e){
     o.connect(g);
     g.connect(context.destination);
     o.start(0);
-    hearingTest = setInterval(changeFrequency, 10);
+    hearingTest = setInterval(changeFrequency, 1);
     
 }
 
