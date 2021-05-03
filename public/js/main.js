@@ -18,6 +18,9 @@ var context = new AudioContext();
 var o = context.createOscillator();
 var g = context.createGain();
 
+// interval
+var hearingTest;
+
 
 /*----- init function -----*/
 initialize();
@@ -38,23 +41,31 @@ function connect(){
     
 }
 
-
+function changeFrequency(){
+    state.hertz += 1;
+    o.frequency.value = state.hertz
+}
 
 /*------------------------------ controller functions ----------------------------*/
 
 function startButtonEvent(e){
     e.preventDefault();
+    state.on = true;
     o = context.createOscillator();
     g = context.createGain();
-    o.frequency.value = 100;
+    o.frequency.value = state.hertz;
     o.type = "sine";
     o.connect(g);
     g.connect(context.destination);
     o.start(0);
+    hearingTest = setInterval(changeFrequency, 10);
+    
 }
 
 function stopButtonEvent(e){
     e.preventDefault();
+    state.on = false;
+    clearInterval(hearingTest);
     o.connect(g);
     g.connect(context.destination);
     g.gain.exponentialRampToValueAtTime(
