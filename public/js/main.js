@@ -3,7 +3,7 @@
 
 /*----- app's state (variables) -----*/
 
-const state = {
+let state = {
     on: false,
     hertz: 0,
     score: "",
@@ -12,6 +12,7 @@ const state = {
 /*----- cached element references -----*/
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
+const resetButton = document.getElementById('reset');
 const score = document.getElementById('score');
 
 // sound -----------------------------------------------*/
@@ -29,11 +30,12 @@ initialize();
 function initialize(){
     
     /*----- event listeners -----*/
-    console.log("init");
+    
     state.score = document.createElement('h3');
     score.appendChild(state.score);
     startButton.addEventListener('click', startButtonEvent);
     stopButton.addEventListener('click', stopButtonEvent);
+    resetButton.addEventListener('click', resetButtonEvent);
     
 }
 
@@ -78,4 +80,14 @@ function stopButtonEvent(e){
     g.gain.exponentialRampToValueAtTime(
         0.00001, context.currentTime + 0.04
     );
+}
+
+function resetButtonEvent(){
+    score.removeChild(state.score);
+    state = {
+        on: false,
+        hertz: 0,
+        score: "",
+    }
+    initialize();
 }
