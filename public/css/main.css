@@ -47,6 +47,9 @@ button:hover{
 #description{
     display: flex;
     justify-content: center;
+    font-family: 'VT323', monospace;
+    font-size: large;
+    color:rgb(120, 40, 136);
 }
 
 #container{
