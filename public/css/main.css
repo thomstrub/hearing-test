@@ -47,7 +47,8 @@ button:hover{
 #container{
     background-color: rgb(236, 245, 245);
     width: 60vw;
-    height: 70vw;
+    height: 50vw;
     margin: 10vw auto;
+    margin-top: 20vw;
     border-radius: 30px;
 }
