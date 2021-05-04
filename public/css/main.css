@@ -44,6 +44,11 @@ button:hover{
     border-radius: 30px;
 }
 
+#description{
+    display: flex;
+    justify-content: center;
+}
+
 #container{
     background-color: rgb(236, 245, 245);
     width: 60vw;
