@@ -67,7 +67,7 @@ function startButtonEvent(e){
     o.connect(g);
     g.connect(context.destination);
     o.start(0);
-    hearingTest = setInterval(changeFrequency, 1);
+    hearingTest = setInterval(changeFrequency, .5);
     
 }
 
