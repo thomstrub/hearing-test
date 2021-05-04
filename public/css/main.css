@@ -5,15 +5,19 @@ body {
 }
 
 h1 {
+    font-family: 'VT323', monospace;
+    
+    margin-top: 10vw;
     color:rgb(120, 40, 136);
 }
 
 button{
-    width: 20vw;
-    height: 8vw;
+    width: 15vw;
+    height: 6vw;
     margin: 10px 10px 10px 10px;
     border-radius: 30px;
-   
+    font-family: 'VT323', monospace;
+    font-size: large;
 }
 
 button:hover{
@@ -26,6 +30,7 @@ button:hover{
 }
 
 #buttons{
+    
     margin-top: 5vw;
     display: flex;
     justify-content: center;
