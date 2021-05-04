@@ -1,8 +1,5 @@
 
-body {
-    background-color: rgb(236, 245, 245);
-    
-}
+
 
 h1 {
     font-family: 'VT323', monospace;
@@ -44,5 +41,13 @@ button:hover{
     height: 5vw;
     width: 10vw;
     background-color: cornsilk;
+    border-radius: 30px;
+}
+
+#container{
+    background-color: rgb(236, 245, 245);
+    width: 60vw;
+    height: 70vw;
+    margin: 10vw auto;
     border-radius: 30px;
 }
