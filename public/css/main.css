@@ -34,8 +34,11 @@ button:hover{
 }
 
 #score{
+    font-family: 'VT323', monospace;
+    font-size: x-large;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 5vw auto;
     color:rgb(216, 105, 64);
     height: 5vw;
